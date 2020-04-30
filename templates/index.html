@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Fonts ROBOTO -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <title>AtlasHacks</title>
+</head>
+
+<style type="text/css">
+
+	body, html {
+		background-color: rgb(240, 240, 240); /*rgb(0, 49, 128);*/
+		/*color: white;*/
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		overflow-x: hidden;
+		scroll-behavior: smooth;
+		font-family: 'Ubuntu', sans-serif;
+	}
+
+	::selection {
+		background: #c7f3f5;
+	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+		background-color: rgb(0, 49, 128)
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		border-radius: 10px;
+		background: rgba(255, 255, 0, 0);
+	}
+	
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: rgb(220, 220, 220); 
+  		border-radius: 10px;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: rgb(180, 180, 180); 
+	}
+
+	.navbar {
+		width: 100%;
+		/* transform: translate(115%, 0%); */
+		/* margin-left: 30%; (100 - width) / 2 */
+		margin-top: -10px;
+		height: 10%;
+		padding-top: 2%;
+		padding-left: 58%;
+		position: static;
+		/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3); */
+		background-color: #090936;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 300 2000 1500'%3E%3Cdefs%3E%3Cellipse fill='none' stroke-width='200' id='a' rx='600' ry='450'/%3E%3C/defs%3E%3Cg style='transform-origin:center'%3E%3Cg transform='' style='transform-origin:center'%3E%3Cg transform='rotate(-160 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%23090936' href='%23a' transform='rotate(-60 0 0) scale(0.4)'/%3E%3Cuse stroke='%23090d3a' href='%23a' transform='rotate(-50 0 0) scale(0.5)'/%3E%3Cuse stroke='%2309103f' href='%23a' transform='rotate(-40 0 0) scale(0.6)'/%3E%3Cuse stroke='%230a1243' href='%23a' transform='rotate(-30 0 0) scale(0.7)'/%3E%3Cuse stroke='%230b1548' href='%23a' transform='rotate(-20 0 0) scale(0.8)'/%3E%3Cuse stroke='%230c174d' href='%23a' transform='rotate(-10 0 0) scale(0.9)'/%3E%3Cuse stroke='%230d1951' href='%23a' transform=''/%3E%3Cuse stroke='%230e1b56' href='%23a' transform='rotate(10 0 0) scale(1.1)'/%3E%3Cuse stroke='%230f1e5b' href='%23a' transform='rotate(20 0 0) scale(1.2)'/%3E%3Cuse stroke='%23102060' href='%23a' transform='rotate(30 0 0) scale(1.3)'/%3E%3Cuse stroke='%23112365' href='%23a' transform='rotate(40 0 0) scale(1.4)'/%3E%3Cuse stroke='%2312256a' href='%23a' transform='rotate(50 0 0) scale(1.5)'/%3E%3Cuse stroke='%2312276f' href='%23a' transform='rotate(60 0 0) scale(1.6)'/%3E%3Cuse stroke='%23132a74' href='%23a' transform='rotate(70 0 0) scale(1.7)'/%3E%3Cuse stroke='%23132d79' href='%23a' transform='rotate(80 0 0) scale(1.8)'/%3E%3Cuse stroke='%23132f7e' href='%23a' transform='rotate(90 0 0) scale(1.9)'/%3E%3Cuse stroke='%23133284' href='%23a' transform='rotate(100 0 0) scale(2)'/%3E%3Cuse stroke='%23133489' href='%23a' transform='rotate(110 0 0) scale(2.1)'/%3E%3Cuse stroke='%2312378e' href='%23a' transform='rotate(120 0 0) scale(2.2)'/%3E%3Cuse stroke='%23113a94' href='%23a' transform='rotate(130 0 0) scale(2.3)'/%3E%3Cuse stroke='%23103c99' href='%23a' transform='rotate(140 0 0) scale(2.4)'/%3E%3Cuse stroke='%230f3f9f' href='%23a' transform='rotate(150 0 0) scale(2.5)'/%3E%3Cuse stroke='%230d42a4' href='%23a' transform='rotate(160 0 0) scale(2.6)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+		/* background by SVGBackgrounds.com */
+		
+		background-attachment: fixed;
+		background-size: cover;
+	} 
+
+	ul#menu {
+		list-style: none;
+		font-weight: 500;
+		font-size: large;
+	}
+
+	ul#menu li {
+		display: inline;
+		/*margin: auto;*/
+	}
+
+	.nav-list-item {
+		margin: 10px;
+	}
+
+	.nav-button {
+		color: rgb(240, 240, 240);
+		padding: 0.75em 1em; /* top/bottom, left/right */
+
+	}
+
+	.nav-button:hover {
+		text-decoration: none;
+		border-radius: 50px;
+		color: rgb(240, 240, 240);
+		background-color: rgba(240, 240, 240, 0.295);
+	}
+
+	.title-card {
+		/* background-color: rgb(0, 49, 128); */
+		background-color: #090936;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 300 2000 1500'%3E%3Cdefs%3E%3Cellipse fill='none' stroke-width='200' id='a' rx='600' ry='450'/%3E%3C/defs%3E%3Cg style='transform-origin:center'%3E%3Cg transform='' style='transform-origin:center'%3E%3Cg transform='rotate(-160 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%23090936' href='%23a' transform='rotate(-60 0 0) scale(0.4)'/%3E%3Cuse stroke='%23090d3a' href='%23a' transform='rotate(-50 0 0) scale(0.5)'/%3E%3Cuse stroke='%2309103f' href='%23a' transform='rotate(-40 0 0) scale(0.6)'/%3E%3Cuse stroke='%230a1243' href='%23a' transform='rotate(-30 0 0) scale(0.7)'/%3E%3Cuse stroke='%230b1548' href='%23a' transform='rotate(-20 0 0) scale(0.8)'/%3E%3Cuse stroke='%230c174d' href='%23a' transform='rotate(-10 0 0) scale(0.9)'/%3E%3Cuse stroke='%230d1951' href='%23a' transform=''/%3E%3Cuse stroke='%230e1b56' href='%23a' transform='rotate(10 0 0) scale(1.1)'/%3E%3Cuse stroke='%230f1e5b' href='%23a' transform='rotate(20 0 0) scale(1.2)'/%3E%3Cuse stroke='%23102060' href='%23a' transform='rotate(30 0 0) scale(1.3)'/%3E%3Cuse stroke='%23112365' href='%23a' transform='rotate(40 0 0) scale(1.4)'/%3E%3Cuse stroke='%2312256a' href='%23a' transform='rotate(50 0 0) scale(1.5)'/%3E%3Cuse stroke='%2312276f' href='%23a' transform='rotate(60 0 0) scale(1.6)'/%3E%3Cuse stroke='%23132a74' href='%23a' transform='rotate(70 0 0) scale(1.7)'/%3E%3Cuse stroke='%23132d79' href='%23a' transform='rotate(80 0 0) scale(1.8)'/%3E%3Cuse stroke='%23132f7e' href='%23a' transform='rotate(90 0 0) scale(1.9)'/%3E%3Cuse stroke='%23133284' href='%23a' transform='rotate(100 0 0) scale(2)'/%3E%3Cuse stroke='%23133489' href='%23a' transform='rotate(110 0 0) scale(2.1)'/%3E%3Cuse stroke='%2312378e' href='%23a' transform='rotate(120 0 0) scale(2.2)'/%3E%3Cuse stroke='%23113a94' href='%23a' transform='rotate(130 0 0) scale(2.3)'/%3E%3Cuse stroke='%23103c99' href='%23a' transform='rotate(140 0 0) scale(2.4)'/%3E%3Cuse stroke='%230f3f9f' href='%23a' transform='rotate(150 0 0) scale(2.5)'/%3E%3Cuse stroke='%230d42a4' href='%23a' transform='rotate(160 0 0) scale(2.6)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+		/* background by SVGBackgrounds.com */
+		
+		background-attachment: fixed;
+		background-size: cover;
+		color: rgb(240, 240, 240);
+		text-align: center;
+		width: 100%;
+		height: 92%;
+		padding-top: 5%;
+	}
+
+	.title {
+		font-size: 130px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+
+	.title-border {
+		margin: auto;
+		padding-top: 1%;
+		width: 55%;
+		height: 45%;
+		border: 10px rgb(240, 240, 240);
+		border-width: thick;
+		border-color: rgb(240, 240, 240);
+		background-color: rgba(0, 49, 128, 0.116);
+		border-radius: 20px;
+		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+	}
+
+	.title-btn-container {
+		width: 180px;
+		height: 60px;
+		position: relative;
+		top: 0%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.btn {
+		width: 180px;
+		height: 60px;
+		cursor: pointer;
+		background: transparent;
+		/* border: 1px solid rgba(15, 63, 159, 0.815); */
+		outline: none;
+		transition: 1s ease-in-out;
+		border-radius: 15px;
+	}
+
+	svg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		fill: none;
+		stroke: rgb(240, 240, 240);
+		stroke-dasharray: 150 480;
+		stroke-dashoffset: 150;
+		transition: 1s ease-in-out;
+	}
+
+	.btn:hover {
+		transition: 1s ease-in-out;
+		background: rgba(15, 63, 159, 0.815);
+	}
+
+	.btn:hover svg {
+		stroke-dashoffset: -480;
+	}
+
+	.btn span {
+		color: rgb(240, 240, 240);
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	.arrow {
+		position: relative;
+		margin: auto;
+		top: 7.5%;
+		left: 0%;
+		width: 5%;
+		cursor: pointer;
+	}
+
+	.arrow span {
+		display: block;
+		width: 30px;
+		height: 30px;
+		border-bottom: 5px solid rgb(240, 240, 240);
+		border-right: 5px solid rgb(240, 240, 240);
+		border-radius: 2.5px;
+		transform: rotate(45deg);
+		margin: auto;
+		animation: arrow-animation 4s infinite;
+	}
+
+	.arrow span:nth-child(2) {
+		animation-delay: -0.2s;
+	}
+
+	.arrow span:nth-child(3){
+		animation-delay: -0.4s;
+	}
+
+	@keyframes arrow-animation {
+		0%{
+			opacity: 0;
+			transform: rotate(45deg) translate(-20px,-20px);
+		}
+		50%{
+			opacity: 1;
+		}
+		100%{
+			opacity: 0;
+			transform: rotate(45deg) translate(20px,20px);
+		}
+	}
+
+    .about {
+    	text-align: center;
+		padding: 0% 9%;
+		padding-top: 5%;
+		height: 35%;
+    }
+
+    .schedule {
+    	margin-top: 50px;
+    	width: 100%;
+    	height: 80%;
+    	padding-top: 3%;
+    	background-color: rgb(0, 49, 128);
+		color: white;
+    }
+
+	hr.header1 {
+		border: 2px solid white;
+		border-radius: 5px;
+		width: 60%;
+		text-align: center;
+		/* margin-left: 22.5%;
+		float: left; */
+		margin-top: 2%;
+	}
+
+	.event-list {
+		float: left;
+		width: 50%;
+		text-align: center;
+	}
+
+	.faqs {
+    	width: 100%;
+    	height: 50%;
+    	padding-top: 3%;
+    }
+
+	.faq {
+		background-color: #11278f;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23112685' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%2311267c' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23122572' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23122569' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%2312245f' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+		background-attachment: fixed;
+		background-size: cover;
+		/* background by SVGBackgrounds.com */
+		
+		color: rgb(240, 240, 240);
+		/* text-align: center; */
+		width: 42.5%;
+		height: 90%;
+		padding-top: 2%;
+		padding-left: 2%;
+		border-radius: 20px;
+		display: inline-block;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	}
+
+	.faq:hover {
+		transition: ease-in-out 0.2s;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+		transform: scale(1.01);
+    }
+
+	.team {
+		margin-top: 30%;
+		width: 100%;
+    	height: 80%;
+    	padding-top: 3%;
+		color: rgb(240, 240, 240);
+    	background-color: rgb(0, 49, 128);
+	}
+
+	.team-card {
+		float: left;
+		height: 75%;
+		width: 25%;
+		margin: auto;
+		text-align: center;
+
+		/* border: 1px solid black;
+		background-color: red; */
+	}
+
+	.team-image {
+		border-radius: 50%;
+		display: inline-block;
+		vertical-align: middle;
+		-webkit-transform: perspective(1px) translateZ(0);
+		transform: perspective(1px) translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+		-webkit-transition-duration: 0.4s;
+		transition-duration: 0.4s;
+	}
+
+	.team-image:hover, .team-image:focus, .team-image:active {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+		-webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+		transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+	}
+
+	.footer {
+		padding-top: 2%;
+		height: 25%;
+		/* padding-left: 40%; */
+		color: rgb(0, 49, 128);
+		text-align: center;
+	}
+
+	.footer-link {
+		margin-left: 20px;
+		font-size: 30px;
+		font-weight: 500;
+		cursor: pointer;
+	}
+
+	.social-buttons {
+		display:inline-block;
+		border-radius: 10px;
+		text-align: center;
+		margin-top: 1%;
+		margin-left: 2%;
+	}
+
+	.social-margin {
+		margin-right: 15px;
+	}
+
+	.social-margin:hover {
+		text-decoration: none;
+	}
+
+	.social-icon {
+		margin-bottom: 15px;
+		box-sizing: border-box;
+		-moz-border-radius: 138px;
+		-webkit-border-radius: 138px;
+		border-radius: 138px;
+		border: 5px solid;
+		text-align: center;
+		width: 50px;
+		height: 50px;
+		display: inline-block;
+		line-height: 1px;
+		padding-top: 11px;
+		transition: all 0.5s;
+	}
+
+	.social-icon:hover {
+    	transform: rotate(360deg)scale(1.3);
+  	}
+
+ 	.social-icon-button {
+		font-size: 22px;
+		padding-top: 9px;
+		border-color: rgb(0, 49, 128);
+		background-color: rgb(0, 49, 128);
+		color: rgb(240, 240, 240);
+  	}
+
+  	.social-icon-button:hover {
+    	background-color: rgb(240, 240, 240);
+    	color: rgb(0, 49, 128);
+  	}
+
+	@media screen and (max-width: 600px) {
+		.event-list {
+			width: 100%;
+		}
+
+		.team-card {
+			width: 100%;
+		}
+
+		.faq {
+			width: 100%;
+			margin: auto;
+		}
+	}
+
+</style>
+
+<body>
+	<div class="navbar">
+		<ul id="menu">
+			<li class="nav-list-item">
+				<a class="nav-button" href="#register">Register</a>
+			</li>
+			<li class="nav-list-item">
+				<a class="nav-button" href="#about" onclick="goToAbout('center')">About</a>
+			</li>
+			<li class="nav-list-item">
+				<a class="nav-button" href="#schedule" onclick="goToSchedule()">Schedule</a>
+			</li>
+			<li class="nav-list-item">
+				<a class="nav-button" href="#FAQ" onclick="goToFAQs()">FAQs</a>
+			</li>
+			<li class="nav-list-item">
+				<a class="nav-button" href="#team" onclick="goToTeam()">Team</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="title-card">
+		<div class="title-border">
+			<a class="title" onclick="goToTop()">AtlasHacks</a>
+			<br>
+			<h2>May 9th - May 11th, 2020</h2>
+		</div>
+		<br><br><br>
+		<div class="title-btn-container" style="display: inline-block; margin-right: 5%; margin-left: 12%;">
+			<button class="btn" onclick="window.location.href = '#register';">
+				<svg width="180px" height="60px" viewBox="0 0 180 60" class="border" style="border-radius: 15px;">
+				<polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+				<polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+				</svg>
+				<span>Register</span>
+			</button>
+		</div>
+		<div class="title-btn-container" style="display: inline-block;">
+			<button class="btn" onclick="window.location.href = '#get-updates';">
+				<svg width="180px" height="60px" viewBox="0 0 180 60" class="border" style="border-radius: 15px;">
+				<polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+				<polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+				</svg>
+				<span>Get Updates</span>
+			</button>
+		</div>
+		<!-- <a class="title-button" href="#" role="button" style="margin-right: 5%; width: 12.5%;">Register</a>
+		<a class="title-button" href="#" role="button" style="width: 12.5%;">Get Updates</a> -->
+
+		<div class="arrow" onclick="goToAbout('start')">
+			<span></span>
+		</div>
+	</div>
+
+	<div class="about">
+		<h1><b>AtlasHacks</b> is a 48 hour, online hackathon hosted by high schoolers. We're inviting <b>everyone</b> to innovate. Work in teams or fly solo to create your next aspiring software or hardware projects.</h1>
+	</div>
+
+	<div class="schedule">
+		<h1 style="text-align: center; font-size: 50px;">Schedule</h1>
+		<h6 style="text-align: center;">(All times are displayed in PST)</h6>
+		<br>
+
+		<div class="event-list">
+			<h3 style="text-align: center;">Friday, May 8th</h3>
+			<hr class="header1">
+			
+			<h4>5:00 - 5:30 PM: Opening Ceremony</h4>
+			<h4>5:30 - 5:00 PM: Team Formation</h4>
+			<h4>5:00 PM: Hacking Begins!</h4>
+		</div>
+
+		<!-- <div class="event-list">
+			<h3 style="text-align: center;">Saturday, May 9th</h3>
+			<hr class="header1">
+		</div> -->
+
+		<div class="event-list">
+			<h3 style="text-align: center;">Sunday, May 10th</h3>
+			<hr class="header1">
+			
+			<h4>5:00 PM: Hacking Ends!</h4>
+			<h4>5:00 - 8:00 PM: Judging</h4>
+			<h4>8:00 - 8:30 PM: Closing Ceremony</h4>
+
+		</div>
+	</div>
+
+	<div class="faqs">
+		<h1 style="color: black; text-align: center; font-size: 50px;">Frequently Asked Questions</h1>
+
+		<br>
+
+		<div class="faq" style="margin-left: 5%;">
+			<h2>What is AtlasHacks?</h2>
+			<p style="margin-left: 0.5%; font-size: 20px;">A hackathon.</p>
+		</div>
+
+		<div class="faq" style="margin-right: 5%; float: right;">
+			<h2>Who Can Attend?</h2>
+			<p style="margin-left: 0.5%; font-size: 20px;">Everyone.</p>
+		</div>
+
+		<br>
+		<br>
+		<br>
+
+		<div class="faq" style="margin-left: 5%;">
+			<h2>Will There Be Prizes?</h2>
+			<p style="margin-left: 0.5%; font-size: 20px;">Yes...!</p>
+		</div>
+
+		<div class="faq" style="margin-right: 5%; float: right;">
+			<h2>How Do I Register?</h2>
+			<p style="margin-left: 0.5%; font-size: 20px;">Sign up on devpost or something</p>
+		</div>
+
+	</div>
+
+	<div class="team">
+		<h1 style="color: white; text-align: center; font-size: 50px;">Team</h1>
+		<br>
+
+		<div class="team-card">
+			<img src="/nishant.jpg" alt="Nishant Ray" width="75%" height="70%" class="team-image">
+			<h1 style="margin-top: 5%;">Nishant Ray</h1>
+			<h5 style="color: rgb(201, 201, 201);">Technology Director</h5>
+		</div>
+
+		<div class="team-card">
+			<img src="/pranav.png" alt="Pranav Harakere" width="75%" height="70%" class="team-image">
+			<h1 style="margin-top: 5%;">Pranav Harakere</h1>
+			<h5 style="color: rgb(201, 201, 201);">Operations Director</h5>
+		</div>
+
+		<div class="team-card">
+			<img src="/loden.jpg" alt="Loden Campbell" width="75%" height="70%" class="team-image">
+			<h1 style="margin-top: 5%;">Loden Campbell</h1>
+			<h5 style="color: rgb(201, 201, 201);">Outreach Director</h5>
+		</div>
+
+		<div class="team-card">
+			<img src="/manu.jpg" alt="Manu Bhat" width="75%" height="70%" class="team-image">
+			<h1 style="margin-top: 5%;">Manu Bhat</h1>
+			<h5 style="color: rgb(201, 201, 201);">Sponsorship Director</h5>
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<a class="footer-link" onclick="goToTop()">AtlasHacks 2020</a>
+		<br>
+		<div class="social-buttons">
+			<a href="http://www.facebook.com" target="blank" class="social-margin" title="Facebook"> 
+				<div class="social-icon social-icon-button">
+				  <i class="fa fa-facebook" aria-hidden="true"></i> 
+				</div>
+			</a>
+			<a href="http://www.instagram.com" target="blank" class="social-margin" title="Instagram"> 
+				<div class="social-icon social-icon-button">
+				  <i class="fa fa-instagram" aria-hidden="true"></i> 
+				</div>
+			</a>
+			<a href="mailto:team@atlashacks.com" target="blank" class="social-margin" title="Email"> 
+				<div class="social-icon social-icon-button">
+				  <i class="fa fa-envelope" aria-hidden="true"></i> 
+				</div>
+			</a>
+			<a href="http://www.devpost.com" target="blank" class="social-margin" title="Devpost"> 
+				<div class="social-icon social-icon-button">
+				  <i class="fa fa-globe" aria-hidden="true"></i> 
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+</body>
+
+<script type="text/javascript">
+
+	function goToTop(){
+		var schedule = document.getElementsByClassName("navbar")[0];
+		schedule.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+	}
+
+	function goToAbout(position){
+		var about = document.getElementsByClassName("about")[0];
+		about.scrollIntoView({behavior: "smooth", block: position, inline: "nearest"});
+	}
+
+	function goToSchedule(){
+		var schedule = document.getElementsByClassName("schedule")[0];
+		schedule.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+	}
+
+	function goToFAQs(){
+		var faqs = document.getElementsByClassName("faqs")[0];
+		faqs.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+	}
+
+	function goToTeam(){
+		var team = document.getElementsByClassName("team")[0];
+		team.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+	}
+
+</script>
+
+</html>
